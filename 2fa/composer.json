@@ -1,5 +1,7 @@
 {
     "require": {
-        "pragmarx/google2fa": "^7.0"
+        "pragmarx/google2fa": "^7.0",
+        "pragmarx/google2fa-qrcode": "^1.0",
+        "bacon/bacon-qr-code": "^2.0"
     }
 }
