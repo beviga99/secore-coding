@@ -25,5 +25,6 @@ if (!$captcha) {
 if ($response->success==true && $response->score <= 0.5) {
     //Do something to denied access
     echo "KO";
-}
+} else {
 echo "Captcha OK";
+}

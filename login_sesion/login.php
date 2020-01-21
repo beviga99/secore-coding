@@ -13,9 +13,11 @@ if ($conn->connect_error) {
 $user =  $_POST['user'];
 $password = $_POST['password'];
 
-$sql = "SELECT * FROM users WHERE user = '$user';";
+$stmt = $dbConnection->prepare('SELECT * FROM users WHERE user = '$user'');
+$stmt->bind_param('s', $user);
+$stmt->execute();
 
-$result = $conn->query($sql);
+$result =  $stmt->get_result(); //$conn->query($sql);
 
 $row = $result->fetch_assoc();
 if (($row) && ($user == $row["user"]) && (password_verify($password, $row["password"]))) {
