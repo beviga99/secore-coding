@@ -13,7 +13,7 @@ if ($conn->connect_error) {
 $user =  $_POST['user'];
 $password = $_POST['password'];
 
-$stmt = $dbConnection->prepare('SELECT * FROM users WHERE user = '$user'');
+/*$stmt = $dbConnection->prepare('SELECT * FROM users WHERE user = '$user'');*/
 $stmt->bind_param('s', $user);
 $stmt->execute();
 
